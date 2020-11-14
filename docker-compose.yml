@@ -1,0 +1,8 @@
+version: "2"
+
+services:
+  pipeline-tools:
+    build: .
+    image: scortum/pipeline-tools
+
+
