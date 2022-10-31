@@ -3,6 +3,6 @@ version: "2"
 services:
   pipeline-tools:
     build: .
-    image: scortum/pipeline-tools
+    image: scortum/pipeline-tools:1.0.0
 
 
