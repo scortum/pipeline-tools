@@ -1,0 +1,21 @@
+apiVersion: batch/v1
+kind: CronJob
+
+metadata:
+  name: log-installed-helm-charts
+
+spec:
+  schedule: "0 1 * * *"  # every day at 1
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: hello
+            image: scortum/pipeline-tools:1.0.0
+            imagePullPolicy: IfNotPresent
+            command:
+            - /bin/sh
+            - -c
+            - date; helm list
+          restartPolicy: OnFailure
